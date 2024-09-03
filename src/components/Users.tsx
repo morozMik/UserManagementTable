@@ -1,5 +1,5 @@
 import React from 'react'
-import { UsersState } from '../app/slicers/saveUsers.slice'
+import { useState } from 'react'
 
 type UsersProps = {
   users: {
@@ -10,18 +10,57 @@ type UsersProps = {
     phone: string
   }[];
 }
+type UserProps = {
+  user: {
+    id: number,
+    name: string, 
+    username: string, 
+    email: string,  
+    phone: string
+  }
+}
 
 function Users({users}:UsersProps) {
   
-  const user = users[1]
+
+  const renderUsers = users.map(user => {
+    return (
+      <User user={user}/>
+    )
+  })
+
+  
+  function User({user}:UserProps){
+    const [accordionOpen, setAccordionOpen] = useState(false); 
+
+    return (
+      <div className='bg-slate-900 text-white p-4 my-6 w-1/2'>
+        <div className='flex justify-between'>
+          <div className=''>{user.username}</div>
+          <button
+            onClick={() => setAccordionOpen(!accordionOpen)}
+            className=''>
+              Show more 
+          </button>
+        </div>
+        <div className={`transition-all duration-300 ease-in-out text-white text-sm ${
+          accordionOpen
+            ? ``
+            : "hidden"
+        }`}id="collapse" data-twe-collapse-item>
+          <div className='flex-1 w-fit'>Name: {user.name}</div>
+          <div className='flex-1 w-fit'>Email: {user.email}</div>
+          <div className='flex-1 w-fit'>Phone number: {user.phone}</div>
+        </div>
+      </div>
+    )
+  }
   return (
-    <div className='flex-row bg-slate-900 text-white p-4'>
-      <div className='flex-1'>{user.name}</div>
-      <div className='flex-1'>{user.username}</div>
-      <div className='flex-1'>{user.email}</div>
-      <div className='flex-1'>{user.phone}</div>
-    </div>
+    <>
+     {renderUsers}
+    </>
   )
+  
 }
 
 export default Users

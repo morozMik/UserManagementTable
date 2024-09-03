@@ -15,7 +15,16 @@ export const usersSlice = createSlice({
   initialState,
   reducers: {
     setUsers: (state, {payload: users}) => {
-      return [...users];
+      const newState:UsersState[] = users.map(user => {
+        return {
+          id: user.id,
+          name: user.name, 
+          username: user.username, 
+          email: user.email,  
+          phone: user.phone
+        }
+      })
+      return [...newState];
     }
     
   },
