@@ -25,16 +25,16 @@ function App() {
   
   
   return (
-    <>
-      <h1 className='text-5xl text-left'>User Management Table:</h1>
-
-      {isLoading ? (
-        <Users users={state} />
-      ) : (
-        <ReactLoading type={'spinningBubbles'} color={'black'} height={'20%'} width={'20%'} />
-      )}
-      
-    </>
+    <div className='bg-gradient-to-r from-blue-300 to-blue-100 h-screen'>
+      <h1 className='text-5xl text-center p-8'>User Management Table</h1>
+      <div className='mx-auto w-fit mt-9'>
+        {isLoading ? (
+          <Users users={state} />
+        ) : (
+          <ReactLoading type={'spinningBubbles'} color={'black'} height={'20%'} width={'20%'} />
+        )}
+      </div>
+    </div>
   )
 }
 
