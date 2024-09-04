@@ -11,7 +11,7 @@ function App() {
   const dispatch = useDispatch()
   const [isLoading, setIsLoading] = useState(false)
   useEffect(() => {
-    
+    //fetching users
     axios.get('https://jsonplaceholder.typicode.com/users').then(function (response) {
       // handle success
       dispatch(setUsers(response.data))
