@@ -2,10 +2,7 @@ import React from 'react'
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 import { FilterMatchMode } from 'primereact/api';
-import { InputText } from 'primereact/inputtext';
 import { useState } from 'react';
-import { PrimeReactProvider } from 'primereact/api';
-import classNames from 'classnames';
 type UsersProps = {
   users: {
     id: number,
