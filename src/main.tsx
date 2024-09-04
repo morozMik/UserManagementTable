@@ -5,7 +5,6 @@ import './index.css'
 import { store } from './app/store'
 import { Provider } from 'react-redux'
 import { PrimeReactProvider } from "primereact/api";
-import Tailwind from 'primereact/passthrough/tailwind';
 import { MyDesignSystem } from './CustomTailwindTableComfig.ts'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
