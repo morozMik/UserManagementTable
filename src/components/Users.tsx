@@ -5,8 +5,7 @@ import { FilterMatchMode } from 'primereact/api';
 import { InputText } from 'primereact/inputtext';
 import { useState } from 'react';
 import { PrimeReactProvider } from 'primereact/api';
-import Tailwind from "primereact/passthrough/tailwind";
-import { usePassThrough } from 'primereact/passthrough';
+import classNames from 'classnames';
 type UsersProps = {
   users: {
     id: number,
@@ -26,47 +25,27 @@ function Users({users}:UsersProps) {
     email: { value: null, matchMode: FilterMatchMode.STARTS_WITH },
     phone: { value: null, matchMode: FilterMatchMode.STARTS_WITH },
   })
-  const CustomTailwind = 
-    {
-      datatable: {
-            thead: {
-                className: 'bg-opacity-30'
-            }
-        }
-    }
     
   return (
-    <>
-    <PrimeReactProvider value={{ unstyled: true, pt: CustomTailwind }}>
+    <div className='bg-opacity-50 bg-slate-50'>
+    
       <DataTable value={users} stripedRows dataKey="id" filters={filter} filterDisplay="row" emptyMessage="No customers found."
-        globalFilterFields={['id','username', 'name', 'email', 'phone']} size='normal'
-        // pt={{
-        //   thead: ({ state }) => ({
-        //       id: 'dataTableThead',
-        //       style: {
-        //           'user-select': 'none'
-        //       },
-        //       className: classNames('border-primary', {
-        //           'bg-primary': state.collapsed,
-        //           'bg-primary-reverse': !state.collapsed
-        //       })
-        //   }),}}
-        >
+        globalFilterFields={['id','username', 'name', 'email', 'phone']} size='normal'>
 
-        <Column field='id' header='ID' sortable filter filterPlaceholder="Search by id" 
+        <Column field='id' header='ID ' sortable filter filterPlaceholder="Search by id" 
           className='border-b border-black p-2'/>
-        <Column field='username' header='Username' sortable filter filterPlaceholder="Search by name"
+        <Column field='username' header='Username ' sortable filter filterPlaceholder="Search by name"
           className='border-b border-black'/>
-        <Column field='name' header='Name' sortable filter filterPlaceholder="Search by username" 
+        <Column field='name' header='Name ' sortable filter filterPlaceholder="Search by username" 
           className='border-b border-black'/>
-        <Column field='email' header='Email' sortable filter filterPlaceholder="Search by email"
+        <Column field='email' header='Email ' sortable filter filterPlaceholder="Search by email"
           className='border-b border-black'/>
-        <Column field='phone' header='Phone number' sortable filter filterPlaceholder="Search by phone number"
+        <Column field='phone' header='Phone number ' sortable filter filterPlaceholder="Search by phone number"
           className='border-b border-black '/>
 
       </DataTable>
-     </PrimeReactProvider>
-    </>
+     
+    </div>
   )
   
 }
