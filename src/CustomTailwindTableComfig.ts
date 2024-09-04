@@ -3,7 +3,7 @@ import classNames from "classnames";
     
     //My Design System with Tailwind
   
-export const MyDesignSystem = {
+export const MyDesignSystem:PrimeReactPTOptions = {
         inputtext: {
             root: ({ props, context }) => ({
                 className: classNames(
