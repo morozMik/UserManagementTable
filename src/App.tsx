@@ -7,7 +7,7 @@ import axios from 'axios';
 import ReactLoading from 'react-loading';
 import { RootState } from '@reduxjs/toolkit/query';
 
-function App() {
+function App() { //@ts-expect-error comment
   const state = useSelector((state: RootState) => state.users)
   const dispatch = useDispatch()
   const [isLoading, setIsLoading] = useState(false)

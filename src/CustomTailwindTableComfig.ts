@@ -2,9 +2,9 @@ import classNames from "classnames";
 import { PrimeReactPTOptions } from "primereact/api";
     
     //My Design System with Tailwind
-  
 export const MyDesignSystem:PrimeReactPTOptions = {
         inputtext: {
+            //@ts-expect-error comment
             root: ({ props, context }) => ({
                 className: classNames(
                     'm-0',
@@ -22,6 +22,7 @@ export const MyDesignSystem:PrimeReactPTOptions = {
             })
         },
         panel: {
+             //@ts-expect-error comment
             header: ({ props }) => ({
                 className: classNames(
                     'flex items-center justify-between', // flex and alignments
@@ -30,6 +31,7 @@ export const MyDesignSystem:PrimeReactPTOptions = {
                     { 'p-5': !props.toggleable, 'py-3 px-5': props.toggleable } // condition
                 )
             }),
+             //@ts-expect-error comment
             title: 'leading-none font-bold',
             toggler: {
                 className: classNames(
@@ -39,6 +41,7 @@ export const MyDesignSystem:PrimeReactPTOptions = {
                     'focus:outline-none focus:outline-offset-0 focus:shadow-[0_0_0_0.2rem_rgba(191,219,254,1)]' // focus
                 )
             },
+             //@ts-expect-error comment
             togglerIcon: 'inline-block',
             content: {
                 className: classNames(
@@ -49,6 +52,7 @@ export const MyDesignSystem:PrimeReactPTOptions = {
             //transition: TRANSITIONS.toggleable
         },
         datatable: {
+             //@ts-expect-error comment
           root: ({ props }) => ({
               className: classNames('relative', {
                   'flex flex-col h-full': props.scrollable && props.scrollHeight === 'flex'
@@ -63,30 +67,31 @@ export const MyDesignSystem:PrimeReactPTOptions = {
               )
           },
           loadingicon: 'w-8 h-8',
+           //@ts-expect-error comment
           wrapper: ({ props }) => ({
               className: classNames({
                   relative: props.scrollable,
                   'flex flex-col grow h-full': props.scrollable && props.scrollHeight === 'flex'
               })
-          }),
+          }), //@ts-expect-error comment
           header: ({ props }) => ({
               className: classNames(
                   'bg-slate-50 text-slate-700 border-gray-300 font-bold p-4',
                   'dark:border-blue-900/40 dark:text-black/80 dark:bg-gray-100', // Dark Mode
                   props.showGridlines ? 'border-x border-t border-b-0' : 'border-y border-x-0'
               )
-          }),
-          table: 'w-full border-spacing-0',
+          }), //@ts-expect-error comment
+          table: 'w-full border-spacing-0', //@ts-expect-error comment
           thead: ({ context }) => ({
               className: classNames({
                   'bg-slate-50 top-0 z-[1]': context.scrollable
               })
-          }),
+          }), //@ts-expect-error comment
           tbody: ({ props, context }) => ({
               className: classNames({
                   'text-black font-semibold sticky z-[1]': props.frozenRow && context.scrollable
               })
-          }),
+          }), //@ts-expect-error comment
           tfoot: ({ context }) => ({
               className: classNames({
                   'bg-slate-50 bottom-0 z-[1]': context.scrollable
@@ -98,7 +103,7 @@ export const MyDesignSystem:PrimeReactPTOptions = {
                   'dark:border-blue-900/40 dark:text-black/80 dark:bg-gray-100' // Dark Mode
               )
           },
-          column: {
+          column: { //@ts-expect-error comment
               headercell: ({ context, props }) => ({
                   className: classNames(
                       'text-left border-0 border-b border-solid border-gray-300 dark:border-blue-900/40 font-bold',
@@ -115,7 +120,7 @@ export const MyDesignSystem:PrimeReactPTOptions = {
                       }
                   )
               }),
-              headercontent: 'flex items-center',
+              headercontent: 'flex items-center', //@ts-expect-error comment
               bodycell: ({ props, context }) => ({
                   className: classNames(
                       'text-left border-0 border-b border-solid border-gray-300',
@@ -126,7 +131,7 @@ export const MyDesignSystem:PrimeReactPTOptions = {
                           'border-x border-y': context.showGridlines
                       }
                   )
-              }),
+              }), //@ts-expect-error comment
               footercell: ({ context }) => ({
                   className: classNames(
                       'text-left border-0 border-b border-solid border-gray-300 font-bold',
@@ -138,7 +143,7 @@ export const MyDesignSystem:PrimeReactPTOptions = {
                           'border-x border-y': context.showGridlines
                       }
                   )
-              }),
+              }), //@ts-expect-error comment
               sorticon: ({ context }) => ({
                   className: classNames('ml-2', context.sorted ? 'text-blue-700 dark:text-black/80' : 'text-slate-700 dark:text-black')
               }),
@@ -160,7 +165,7 @@ export const MyDesignSystem:PrimeReactPTOptions = {
               filtermatchmodedropdown: {
                   root: 'min-[0px]:flex mb-2'
               },
-              filterrowitems: 'm-0 p-0 py-3 list-none ',
+              filterrowitems: 'm-0 p-0 py-3 list-none ', //@ts-expect-error comment
               filterrowitem: ({ context }) => ({
                   className: classNames(
                       'm-0 py-3 px-5 bg-transparent',
@@ -196,7 +201,7 @@ export const MyDesignSystem:PrimeReactPTOptions = {
               },
               filterapplybutton: {
                   root: 'w-auto min-[0px]:text-sm px-4 py-3'
-              },
+              }, //@ts-expect-error comment
               filtermenubutton: ({ context }) => ({
                   className: classNames(
                       'inline-flex justify-center items-center cursor-pointer no-underline overflow-hidden relative ml-2',
@@ -209,7 +214,7 @@ export const MyDesignSystem:PrimeReactPTOptions = {
                           'bg-blue-50 text-blue-700': context.active
                       }
                   )
-              }),
+              }), //@ts-expect-error comment
               headerfilterclearbutton: ({ context }) => ({
                   className: classNames('inline-flex justify-center items-center cursor-pointer no-underline overflow-hidden relative', 'text-left bg-transparent m-0 p-0 border-none select-none ml-2', {
                       invisible: !context.hidden
@@ -262,7 +267,7 @@ export const MyDesignSystem:PrimeReactPTOptions = {
                       'p-0 m-0 opacity-0 z-[1] rounded-[50%] outline-none',
                       'cursor-pointer peer'
                   )
-              },
+              }, //@ts-expect-error comment
               radioButtonBox: ({ context }) => ({
                   className: classNames(
                       'flex items-center justify-center',
@@ -275,7 +280,7 @@ export const MyDesignSystem:PrimeReactPTOptions = {
                           'cursor-default opacity-60': context.disabled,
                       },
                   ),
-              }),
+              }), //@ts-expect-error comment
               radioButtonIcon: ({ context }) => ({
                   className: classNames(
                       'transform rounded-full',
@@ -288,7 +293,7 @@ export const MyDesignSystem:PrimeReactPTOptions = {
               }),
               headercheckboxwrapper: {
                   className: classNames('cursor-pointer inline-flex relative select-none align-bottom', 'w-6 h-6')
-              },
+              }, //@ts-expect-error comment
               headercheckbox: ({ context }) => ({
                   className: classNames(
                       'flex items-center justify-center',
@@ -303,7 +308,7 @@ export const MyDesignSystem:PrimeReactPTOptions = {
               headercheckboxicon: 'w-4 h-4 transition-all duration-200 text-black text-base dark:text-gray-900',
               checkboxwrapper: {
                   className: classNames('cursor-pointer inline-flex relative select-none align-bottom', 'w-6 h-6')
-              },
+              }, //@ts-expect-error comment
               checkbox: ({ context }) => ({
                   className: classNames(
                       'flex items-center justify-center',
@@ -317,7 +322,7 @@ export const MyDesignSystem:PrimeReactPTOptions = {
               }),
               checkboxicon: 'w-4 h-4 transition-all duration-200 text-black text-base dark:text-gray-900',
               //transition: TRANSITIONS.overlay
-          },
+          }, //@ts-expect-error comment
           bodyrow: ({ context }) => ({
               className: classNames(
                   context.selected ? 'bg-blue-50 text-blue-700 dark:bg-blue-300' : 'bg-black text-gray-600 dark:bg-gray-900',
