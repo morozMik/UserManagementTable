@@ -308,7 +308,7 @@ export const MyDesignSystem:PrimeReactPTOptions = {
               headercheckboxicon: 'w-4 h-4 transition-all duration-200 text-black text-base dark:text-gray-900',
               checkboxwrapper: {
                   className: classNames('cursor-pointer inline-flex relative select-none align-bottom', 'w-6 h-6')
-              }, //@ts-expect-error comment
+              },//@ts-expect-error comment
               checkbox: ({ context }) => ({
                   className: classNames(
                       'flex items-center justify-center',
@@ -322,13 +322,13 @@ export const MyDesignSystem:PrimeReactPTOptions = {
               }),
               checkboxicon: 'w-4 h-4 transition-all duration-200 text-black text-base dark:text-gray-900',
               //transition: TRANSITIONS.overlay
-          }, //@ts-expect-error comment
+          },//@ts-expect-error comment
           bodyrow: ({ context }) => ({
               className: classNames(
                   context.selected ? 'bg-blue-50 text-blue-700 dark:bg-blue-300' : 'bg-black text-gray-600 dark:bg-gray-900',
                   context.stripedRows ? (context.index % 2 === 0 ? 
-                  'bg-black dark:text-black dark:bg-gray-100 dark:bg-opacity-10' : 
-                  'bg-blue-50/50 text-gray-600 dark:bg-blue-100 dark:bg-opacity-10') : '',
+                  'bg-black dark:text-black dark:bg-slate-50 dark:bg-opacity-10' : 
+                  'bg-blue-50/50 text-gray-600 dark:bg-blue-50 dark:bg-opacity-10') : '',
                   'transition duration-200',
                   'focus:outline focus:outline-[0.15rem] focus:outline-blue-200 focus:outline-offset-[-0.15rem]', // Focus
                   'dark:text-black/80 dark:focus:outline dark:focus:outline-[0.15rem] dark:focus:outline-blue-300 dark:focus:outline-offset-[-0.15rem]', // Dark Mode

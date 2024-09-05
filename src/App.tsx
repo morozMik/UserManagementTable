@@ -27,7 +27,9 @@ function App() { //@ts-expect-error comment
   
   return (
     <div className='bg-gradient-to-r from-blue-300 to-blue-100 h-screen'>
-      <h1 className='text-5xl text-center p-8 font-mono font-black'>User Management Table</h1>
+      <h1 className='text-5xl text-center p-8 font-mono font-black text-white drop-shadow-md'>
+        User Management Table
+      </h1>
       <div className='mx-auto w-fit mt-9 tracking-wide font-semibold'>
         {isLoading ? (
           <Users users={state} />
