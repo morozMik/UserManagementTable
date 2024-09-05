@@ -1,5 +1,5 @@
 import classNames from "classnames";
-
+import { PrimeReactPTOptions } from "primereact/api";
     
     //My Design System with Tailwind
   
