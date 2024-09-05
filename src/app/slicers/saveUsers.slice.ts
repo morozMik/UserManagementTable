@@ -8,6 +8,7 @@ export interface UsersState {
   phone: string
 }
 
+
 const initialState: UsersState[] = []
 
 export const usersSlice = createSlice({
@@ -15,7 +16,7 @@ export const usersSlice = createSlice({
   initialState,
   reducers: {
     setUsers: (state, {payload: users}) => {
-      const newState:UsersState[] = users.map(user => {
+      const newState:UsersState[] = users.map((user: UsersState) => {
         return {
           id: user.id,
           name: user.name, 
