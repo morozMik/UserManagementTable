@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { setUsers } from './app/slicers/saveUsers.slice';
 import axios from 'axios';
 import ReactLoading from 'react-loading';
+import { RootState } from '@reduxjs/toolkit/query';
 
 function App() {
   const state = useSelector((state: RootState) => state.users)
